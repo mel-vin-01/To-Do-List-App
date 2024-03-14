@@ -1,5 +1,4 @@
 from tkinter import messagebox
-
 import customtkinter
 
 
@@ -9,6 +8,8 @@ class App(customtkinter.CTk):
 
         self.title("To-Do Application")
         self.geometry(f"{400}x{600}")
+        # self.eval('tk::PlaceWindow . center')
+        self.resizable(0, False)
         self.main()
 
     def main(self):
@@ -34,6 +35,7 @@ class App(customtkinter.CTk):
 
         if not all([todo]):
             messagebox.showerror("Error", "Please fill.")
+
             return
 
         self.chck_box = customtkinter.CTkCheckBox(self.wrap, text=todo, font=(customtkinter.CTkFont(size=18)), command=self.done_list)
