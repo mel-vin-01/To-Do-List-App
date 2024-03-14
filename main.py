@@ -27,7 +27,7 @@ class App(customtkinter.CTk):
         btn_submit.pack(pady=(0, 10))
 
         self.wrap = customtkinter.CTkScrollableFrame(self)
-        self.wrap.pack(pady=(5, 5), expand=True, fill="both")
+        self.wrap.pack(pady=(0, 5), expand=True, fill="both")
 
     def submit(self):
         todo = self.txt_todo.get()
@@ -36,8 +36,11 @@ class App(customtkinter.CTk):
             messagebox.showerror("Error", "Please fill.")
             return
 
-        chck_box = customtkinter.CTkCheckBox(self.wrap, text=todo, font=(customtkinter.CTkFont(size=18)))
-        chck_box.pack(pady=(3, 3), anchor="nw")
+        self.chck_box = customtkinter.CTkCheckBox(self.wrap, text=todo, font=(customtkinter.CTkFont(size=18)), command=self.done_list)
+        self.chck_box.pack(pady=(3, 3), anchor="nw")
+
+    def done_list(self):
+        self.chck_box.destroy()
 
 
 if __name__ == "__main__":
