@@ -43,7 +43,7 @@ class App(customtkinter.CTk):
 
     def done_list(self):
         # self.chck_box.destroy()
-        todo = self.chck_box.getint()
+        # todo = self.chck_box.getint()
 
 
 
