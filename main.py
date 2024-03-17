@@ -42,7 +42,9 @@ class App(customtkinter.CTk):
         self.chck_box.pack(pady=(3, 3), anchor="nw")
 
     def done_list(self):
-        self.chck_box.destroy()
+        # self.chck_box.destroy()
+        todo = self.chck_box.getint()
+
 
 
 if __name__ == "__main__":
